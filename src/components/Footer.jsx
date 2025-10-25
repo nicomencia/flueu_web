@@ -14,8 +14,8 @@ export default function Footer() {
             <h4>Navegar</h4>
             <ul>
               <li><a href="#colecciones">Colecciones</a></li>
-              <li><a href="#creaciones">Creaciones</a></li>
-              <li><a href="#nosotros">Sobre Mí</a></li>
+              <li><a href="#creations">Creaciones</a></li>
+              <li><a href="#sobre-mi">Sobre Mí</a></li>
             </ul>
           </div>
 
