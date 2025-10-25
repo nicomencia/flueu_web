@@ -1,6 +1,6 @@
 .collections {
   padding: var(--spacing-xl) 0;
-  background: var(--color-cream);
+  background: var(--color-white);
 }
 
 .collections h2 {
@@ -22,10 +22,10 @@
 }
 
 .collection-section {
-  background: var(--color-white);
-  border-radius: 8px;
+  background: transparent;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
 }
 
 .collection-header {
