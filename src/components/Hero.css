@@ -35,9 +35,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #CB9CC0;
+  background: var(--color-white);
   border-radius: 50%;
-  color: var(--color-white);
+  color: #CB9CC0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
@@ -87,7 +87,7 @@
 
   .hero-social {
     position: fixed;
-    bottom: 20px;
+    bottom: 60px;
     left: 0;
     right: 0;
     margin: 0;
