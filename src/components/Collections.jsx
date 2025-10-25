@@ -76,7 +76,7 @@ export default function Collections() {
                 )}
                 <div className="collection-info">
                   <h3>{collection.name}</h3>
-                  <p>{collection.description}</p>
+                  <p>{new Date(collection.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                 </div>
               </div>
 
