@@ -1,5 +1,5 @@
 /*
-  # Fleue Studio Database Schema
+  # Flueu Studio Database Schema
 
   1. New Tables
     - `products`
