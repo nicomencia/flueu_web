@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import './Shop.css';
 
-const categories = ['All', 'Anillos', 'Pendientes', 'Colgantes', 'Pinzas de pelo'];
+const categories = ['Todos', 'Anillos', 'Pendientes', 'Colgantes', 'Pinzas de pelo'];
 
 export default function Shop() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState('Todos');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function Shop() {
   }, []);
 
   useEffect(() => {
-    if (activeFilter === 'All') {
+    if (activeFilter === 'Todos') {
       setFilteredProducts(products);
     } else {
       setFilteredProducts(products.filter(p => p.category === activeFilter));
@@ -43,8 +43,8 @@ export default function Shop() {
     return (
       <section id="shop" className="shop">
         <div className="container">
-          <h2>Shop</h2>
-          <p>Loading...</p>
+          <h2>Tienda</h2>
+          <p>Cargando...</p>
         </div>
       </section>
     );
@@ -68,7 +68,7 @@ export default function Shop() {
         </div>
 
         {filteredProducts.length === 0 ? (
-          <p className="shop-empty">No products available in this category yet.</p>
+          <p className="shop-empty">No hay productos disponibles en esta categoría aún.</p>
         ) : (
           <div className="shop-grid">
             {filteredProducts.map((product) => (

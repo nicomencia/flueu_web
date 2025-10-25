@@ -7,22 +7,22 @@ export default function Footer() {
         <div className="footer-content">
           <div className="footer-brand">
             <img src="/flueu_logo.jpg" alt="Fleue Studio" className="footer-logo" />
-            <p>Handmade jewelry from recycled plastic, inspired by nature.</p>
+            <p>Joyería hecha a mano de plástico reciclado, inspirada en la naturaleza.</p>
           </div>
 
           <div className="footer-links">
-            <h4>Navigate</h4>
+            <h4>Navegar</h4>
             <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#news">News</a></li>
-              <li><a href="#creations">Creations</a></li>
-              <li><a href="#shop">Shop</a></li>
-              <li><a href="#collections">Collections</a></li>
+              <li><a href="#about">Sobre Nosotros</a></li>
+              <li><a href="#news">Noticias</a></li>
+              <li><a href="#creations">Creaciones</a></li>
+              <li><a href="#shop">Tienda</a></li>
+              <li><a href="#collections">Colecciones</a></li>
             </ul>
           </div>
 
           <div className="footer-social">
-            <h4>Connect</h4>
+            <h4>Conectar</h4>
             <div className="footer-social-links">
               <a href="mailto:fleuustudio@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Fleue Studio. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Fleue Studio. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

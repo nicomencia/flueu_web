@@ -14,7 +14,7 @@ export default function Navigation() {
         <button
           className="nav-toggle"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          aria-label="Alternar menú"
         >
           <span></span>
           <span></span>
@@ -22,11 +22,11 @@ export default function Navigation() {
         </button>
 
         <ul className={`nav-menu ${isOpen ? 'nav-menu--open' : ''}`}>
-          <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
-          <li><a href="#news" onClick={() => setIsOpen(false)}>News</a></li>
-          <li><a href="#creations" onClick={() => setIsOpen(false)}>Creations</a></li>
-          <li><a href="#shop" onClick={() => setIsOpen(false)}>Shop</a></li>
-          <li><a href="#collections" onClick={() => setIsOpen(false)}>Collections</a></li>
+          <li><a href="#about" onClick={() => setIsOpen(false)}>Sobre Nosotros</a></li>
+          <li><a href="#news" onClick={() => setIsOpen(false)}>Noticias</a></li>
+          <li><a href="#creations" onClick={() => setIsOpen(false)}>Creaciones</a></li>
+          <li><a href="#shop" onClick={() => setIsOpen(false)}>Tienda</a></li>
+          <li><a href="#collections" onClick={() => setIsOpen(false)}>Colecciones</a></li>
         </ul>
       </div>
     </nav>

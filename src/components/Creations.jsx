@@ -31,8 +31,8 @@ export default function Creations() {
     return (
       <section id="creations" className="creations">
         <div className="container">
-          <h2>Featured Creations</h2>
-          <p>Loading...</p>
+          <h2>Creaciones Destacadas</h2>
+          <p>Cargando...</p>
         </div>
       </section>
     );
@@ -42,8 +42,8 @@ export default function Creations() {
     return (
       <section id="creations" className="creations">
         <div className="container">
-          <h2>Featured Creations</h2>
-          <p className="creations-empty">New pieces coming soon.</p>
+          <h2>Creaciones Destacadas</h2>
+          <p className="creations-empty">Nuevas piezas próximamente.</p>
         </div>
       </section>
     );

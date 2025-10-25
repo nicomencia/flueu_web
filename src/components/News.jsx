@@ -31,8 +31,8 @@ export default function News() {
     return (
       <section id="news" className="news">
         <div className="container">
-          <h2>News</h2>
-          <p>Loading...</p>
+          <h2>Noticias</h2>
+          <p>Cargando...</p>
         </div>
       </section>
     );
@@ -42,8 +42,8 @@ export default function News() {
     return (
       <section id="news" className="news">
         <div className="container">
-          <h2>News</h2>
-          <p className="news-empty">Stay tuned for updates and announcements.</p>
+          <h2>Noticias</h2>
+          <p className="news-empty">Mantente atento a las actualizaciones y anuncios.</p>
         </div>
       </section>
     );
@@ -52,7 +52,7 @@ export default function News() {
   return (
     <section id="news" className="news">
       <div className="container">
-        <h2>News</h2>
+        <h2>Noticias</h2>
         <div className="news-grid">
           {news.map((item) => (
             <article key={item.id} className="news-card">
@@ -61,7 +61,7 @@ export default function News() {
               )}
               <div className="news-content">
                 <h3>{item.title}</h3>
-                <time>{new Date(item.published_date).toLocaleDateString()}</time>
+                <time>{new Date(item.published_date).toLocaleDateString('es-ES')}</time>
                 <p>{item.content}</p>
               </div>
             </article>

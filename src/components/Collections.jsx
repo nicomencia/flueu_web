@@ -45,8 +45,8 @@ export default function Collections() {
     return (
       <section id="collections" className="collections">
         <div className="container">
-          <h2>Collections</h2>
-          <p>Loading...</p>
+          <h2>Colecciones</h2>
+          <p>Cargando...</p>
         </div>
       </section>
     );
@@ -56,8 +56,8 @@ export default function Collections() {
     return (
       <section id="collections" className="collections">
         <div className="container">
-          <h2>Collections</h2>
-          <p className="collections-empty">New collections coming soon.</p>
+          <h2>Colecciones</h2>
+          <p className="collections-empty">Nuevas colecciones próximamente.</p>
         </div>
       </section>
     );
