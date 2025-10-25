@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-brand">
-            <img src="/Flueu (2).png" alt="Fleue Studio" className="footer-logo" />
+            <img src="/Flueu (2).png" alt="Flueu Studio" className="footer-logo" />
             <p>Joyería hecha a mano de plástico reciclado, inspirada en la naturaleza.</p>
           </div>
 
@@ -49,7 +49,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Fleue Studio. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Flueu Studio. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
