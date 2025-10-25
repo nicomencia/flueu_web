@@ -22,7 +22,7 @@ export default function Navigation() {
         </button>
 
         <ul className={`nav-menu ${isOpen ? 'nav-menu--open' : ''}`}>
-          <li><a href="#about" onClick={() => setIsOpen(false)}>Sobre Nosotros</a></li>
+          <li><a href="#about" onClick={() => setIsOpen(false)}>Sobre Mí</a></li>
           <li><a href="#news" onClick={() => setIsOpen(false)}>Noticias</a></li>
           <li><a href="#creations" onClick={() => setIsOpen(false)}>Creaciones</a></li>
           <li><a href="#shop" onClick={() => setIsOpen(false)}>Tienda</a></li>
