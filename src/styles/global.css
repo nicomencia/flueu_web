@@ -18,8 +18,8 @@
   --spacing-lg: 4rem;
   --spacing-xl: 6rem;
 
-  --font-serif: 'Crimson Text', serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --font-serif: 'Nunito', 'Montserrat', 'Poppins', sans-serif;
+  --font-sans: 'Nunito', 'Montserrat', 'Poppins', sans-serif;
 }
 
 body {
@@ -33,7 +33,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   line-height: 1.2;
-  font-weight: 400;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 h1 {
