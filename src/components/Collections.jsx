@@ -4,7 +4,6 @@ import './Collections.css';
 
 export default function Collections() {
   const [collections, setCollections] = useState([]);
-  const [collectionProducts, setCollectionProducts] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,20 +19,6 @@ export default function Collections() {
 
       if (collectionsError) throw collectionsError;
       setCollections(collectionsData || []);
-
-      if (collectionsData && collectionsData.length > 0) {
-        const productsMap = {};
-        for (const collection of collectionsData) {
-          const { data: productsData, error: productsError } = await supabase
-            .from('products')
-            .select('*')
-            .eq('collection_id', collection.id);
-
-          if (productsError) throw productsError;
-          productsMap[collection.id] = productsData || [];
-        }
-        setCollectionProducts(productsMap);
-      }
     } catch (error) {
       console.error('Error fetching collections:', error);
     } finally {
@@ -82,22 +67,6 @@ export default function Collections() {
                   )}
                 </div>
               </div>
-
-              {collectionProducts[collection.id] && collectionProducts[collection.id].length > 0 && (
-                <div className="collection-products">
-                  {collectionProducts[collection.id].map((product) => (
-                    <div key={product.id} className="collection-product-card">
-                      <div className="collection-product-image">
-                        <img src={product.image_url} alt={product.name} />
-                      </div>
-                      <div className="collection-product-info">
-                        <h4>{product.name}</h4>
-                        <p className="collection-product-price">{product.price}€</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
           ))}
         </div>
