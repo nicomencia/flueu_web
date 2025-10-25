@@ -6,7 +6,7 @@ export default function About() {
       <div className="container">
         <div className="about-content">
           <div className="about-text">
-            <h2>Sobre Fleue</h2>
+            <h2>Sobre Mí</h2>
             <p>
               Joyería hecha a mano con plástico reciclado.
               Cada pieza es única, inspirada en la naturaleza y creada con consciencia.
