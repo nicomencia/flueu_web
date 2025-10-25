@@ -1,12 +1,20 @@
 .creations {
   padding: var(--spacing-xl) 0;
-  background: var(--color-cream);
+  background: var(--color-white);
 }
 
 .creations h2 {
   text-align: center;
   margin-bottom: var(--spacing-lg);
   color: var(--color-blue);
+}
+
+.creations-filters {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
 }
 
 .creations-empty {
@@ -69,8 +77,34 @@
   margin-bottom: var(--spacing-xs);
 }
 
+.creation-description {
+  color: var(--color-gray);
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-xs);
+}
+
 .creation-price {
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--color-blue);
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid var(--color-blue);
+  background: transparent;
+  color: var(--color-blue);
+  font-weight: 600;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+.filter-btn--active {
+  background: var(--color-blue);
+  color: var(--color-white);
 }

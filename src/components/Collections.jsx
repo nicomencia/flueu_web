@@ -43,7 +43,7 @@ export default function Collections() {
 
   if (loading) {
     return (
-      <section id="collections" className="collections">
+      <section id="colecciones" className="collections">
         <div className="container">
           <h2>Colecciones</h2>
           <p>Cargando...</p>
@@ -54,7 +54,7 @@ export default function Collections() {
 
   if (collections.length === 0) {
     return (
-      <section id="collections" className="collections">
+      <section id="colecciones" className="collections">
         <div className="container">
           <h2>Colecciones</h2>
           <p className="collections-empty">Nuevas colecciones próximamente.</p>
@@ -64,9 +64,9 @@ export default function Collections() {
   }
 
   return (
-    <section id="collections" className="collections">
+    <section id="colecciones" className="collections">
       <div className="container">
-        <h2>Collections</h2>
+        <h2>Colecciones</h2>
         <div className="collections-list">
           {collections.map((collection) => (
             <div key={collection.id} className="collection-section">

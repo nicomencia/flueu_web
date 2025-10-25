@@ -2,26 +2,38 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import './Creations.css';
 
+const categories = ['Todos', 'Anillos', 'Pendientes', 'Colgantes', 'Pinzas de pelo'];
+
 export default function Creations() {
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [activeFilter, setActiveFilter] = useState('Todos');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchFeaturedProducts();
+    fetchProducts();
   }, []);
 
-  async function fetchFeaturedProducts() {
+  useEffect(() => {
+    if (activeFilter === 'Todos') {
+      setFilteredProducts(products);
+    } else {
+      setFilteredProducts(products.filter(p => p.category === activeFilter));
+    }
+  }, [activeFilter, products]);
+
+  async function fetchProducts() {
     try {
       const { data, error } = await supabase
         .from('products')
         .select('*')
-        .eq('featured', true)
-        .limit(6);
+        .order('created_at', { ascending: false });
 
       if (error) throw error;
       setProducts(data || []);
+      setFilteredProducts(data || []);
     } catch (error) {
-      console.error('Error fetching featured products:', error);
+      console.error('Error fetching products:', error);
     } finally {
       setLoading(false);
     }
@@ -31,19 +43,8 @@ export default function Creations() {
     return (
       <section id="creations" className="creations">
         <div className="container">
-          <h2>Creaciones Destacadas</h2>
+          <h2>Creaciones</h2>
           <p>Cargando...</p>
-        </div>
-      </section>
-    );
-  }
-
-  if (products.length === 0) {
-    return (
-      <section id="creations" className="creations">
-        <div className="container">
-          <h2>Creaciones Destacadas</h2>
-          <p className="creations-empty">Nuevas piezas próximamente.</p>
         </div>
       </section>
     );
@@ -52,21 +53,39 @@ export default function Creations() {
   return (
     <section id="creations" className="creations">
       <div className="container">
-        <h2>Featured Creations</h2>
-        <div className="creations-grid">
-          {products.map((product) => (
-            <div key={product.id} className="creation-card">
-              <div className="creation-image">
-                <img src={product.image_url} alt={product.name} />
-              </div>
-              <div className="creation-info">
-                <h3>{product.name}</h3>
-                <p className="creation-category">{product.category}</p>
-                <p className="creation-price">{product.price}€</p>
-              </div>
-            </div>
+        <h2>Creaciones</h2>
+
+        <div className="creations-filters">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`filter-btn ${activeFilter === category ? 'filter-btn--active' : ''}`}
+              onClick={() => setActiveFilter(category)}
+            >
+              {category}
+            </button>
           ))}
         </div>
+
+        {filteredProducts.length === 0 ? (
+          <p className="creations-empty">No hay productos disponibles en esta categoría aún.</p>
+        ) : (
+          <div className="creations-grid">
+            {filteredProducts.map((product) => (
+              <div key={product.id} className="creation-card">
+                <div className="creation-image">
+                  <img src={product.image_url} alt={product.name} />
+                </div>
+                <div className="creation-info">
+                  <h3>{product.name}</h3>
+                  <p className="creation-category">{product.category}</p>
+                  <p className="creation-description">{product.description}</p>
+                  <p className="creation-price">{product.price}€</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
