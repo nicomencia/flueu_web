@@ -7,10 +7,6 @@ export default function Navigation() {
   return (
     <nav className="navigation">
       <div className="nav-container">
-        <a href="/" className="nav-logo">
-          <img src="/flueu_logo.jpg" alt="Fleue Studio" />
-        </a>
-
         <button
           className="nav-toggle"
           onClick={() => setIsOpen(!isOpen)}
