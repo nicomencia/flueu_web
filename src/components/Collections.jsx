@@ -74,7 +74,7 @@ export default function Collections() {
                 {collection.image_url && (
                   <img src={collection.image_url} alt={collection.name} className="collection-hero" />
                 )}
-                <div className="collection-overlay">
+                <div className="collection-info">
                   <h3>{collection.name}</h3>
                   <p>{collection.description}</p>
                 </div>
