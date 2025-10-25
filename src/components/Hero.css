@@ -1,0 +1,89 @@
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 82, 204, 0.1), rgba(0, 82, 204, 0.05)),
+              url('https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-logo {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-lg);
+  box-shadow: 0 10px 40px rgba(0, 82, 204, 0.2);
+  animation: fadeInScale 1s ease-out;
+}
+
+.hero-social {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-social a {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-white);
+  border-radius: 50%;
+  color: var(--color-blue);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.hero-social a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 82, 204, 0.3);
+  opacity: 1;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-social a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-social svg {
+    width: 20px;
+    height: 20px;
+  }
+}

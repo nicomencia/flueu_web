@@ -1,0 +1,104 @@
+import { useState, useEffect } from 'react';
+import { supabase } from '../lib/supabase';
+import './Collections.css';
+
+export default function Collections() {
+  const [collections, setCollections] = useState([]);
+  const [collectionProducts, setCollectionProducts] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchCollections();
+  }, []);
+
+  async function fetchCollections() {
+    try {
+      const { data: collectionsData, error: collectionsError } = await supabase
+        .from('collections')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (collectionsError) throw collectionsError;
+      setCollections(collectionsData || []);
+
+      if (collectionsData && collectionsData.length > 0) {
+        const productsMap = {};
+        for (const collection of collectionsData) {
+          const { data: productsData, error: productsError } = await supabase
+            .from('products')
+            .select('*')
+            .eq('collection_id', collection.id);
+
+          if (productsError) throw productsError;
+          productsMap[collection.id] = productsData || [];
+        }
+        setCollectionProducts(productsMap);
+      }
+    } catch (error) {
+      console.error('Error fetching collections:', error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  if (loading) {
+    return (
+      <section id="collections" className="collections">
+        <div className="container">
+          <h2>Collections</h2>
+          <p>Loading...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (collections.length === 0) {
+    return (
+      <section id="collections" className="collections">
+        <div className="container">
+          <h2>Collections</h2>
+          <p className="collections-empty">New collections coming soon.</p>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section id="collections" className="collections">
+      <div className="container">
+        <h2>Collections</h2>
+        <div className="collections-list">
+          {collections.map((collection) => (
+            <div key={collection.id} className="collection-section">
+              <div className="collection-header">
+                {collection.image_url && (
+                  <img src={collection.image_url} alt={collection.name} className="collection-hero" />
+                )}
+                <div className="collection-overlay">
+                  <h3>{collection.name}</h3>
+                  <p>{collection.description}</p>
+                </div>
+              </div>
+
+              {collectionProducts[collection.id] && collectionProducts[collection.id].length > 0 && (
+                <div className="collection-products">
+                  {collectionProducts[collection.id].map((product) => (
+                    <div key={product.id} className="collection-product-card">
+                      <div className="collection-product-image">
+                        <img src={product.image_url} alt={product.name} />
+                      </div>
+                      <div className="collection-product-info">
+                        <h4>{product.name}</h4>
+                        <p className="collection-product-price">{product.price}€</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
