@@ -14,7 +14,7 @@ export default function About() {
             <p className="artist-name">Paula Sastre Valverde</p>
           </div>
           <div className="about-image">
-            <img src="/AI_project-12.jpg" alt="Paula Sastre Valverde" />
+            <img src="/AI_project-11.jpg" alt="Paula Sastre Valverde" />
           </div>
         </div>
       </div>
