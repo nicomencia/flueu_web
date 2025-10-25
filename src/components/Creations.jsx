@@ -18,7 +18,14 @@ export default function Creations() {
     if (activeFilter === 'Todos') {
       setFilteredProducts(products);
     } else {
-      setFilteredProducts(products.filter(p => p.category === activeFilter));
+      const categoryMap = {
+        'Anillos': 'Anillo',
+        'Pendientes': 'Pendiente',
+        'Colgantes': 'Colgante',
+        'Pinzas de pelo': 'Pinza'
+      };
+      const dbCategory = categoryMap[activeFilter] || activeFilter;
+      setFilteredProducts(products.filter(p => p.category === dbCategory));
     }
   }, [activeFilter, products]);
 
