@@ -13,11 +13,9 @@ export default function Footer() {
           <div className="footer-links">
             <h4>Navegar</h4>
             <ul>
-              <li><a href="#nosotros">Nosotros</a></li>
-              <li><a href="#noticias">Noticias</a></li>
-              <li><a href="#creaciones">Creaciones</a></li>
-              <li><a href="#tienda">Tienda</a></li>
               <li><a href="#colecciones">Colecciones</a></li>
+              <li><a href="#creaciones">Creaciones</a></li>
+              <li><a href="#nosotros">Sobre Mí</a></li>
             </ul>
           </div>
 
