@@ -18,8 +18,8 @@ export default function Navigation() {
         </button>
 
         <ul className={`nav-menu ${isOpen ? 'nav-menu--open' : ''}`}>
-          <li><a href="#creations" onClick={() => setIsOpen(false)}>Creaciones</a></li>
           <li><a href="#colecciones" onClick={() => setIsOpen(false)}>Colecciones</a></li>
+          <li><a href="#creations" onClick={() => setIsOpen(false)}>Creaciones</a></li>
           <li><a href="#sobre-mi" onClick={() => setIsOpen(false)}>Sobre Mí</a></li>
         </ul>
       </div>
