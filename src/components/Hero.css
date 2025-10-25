@@ -71,9 +71,27 @@
 }
 
 @media (max-width: 768px) {
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding-top: 80px;
+  }
+
   .hero-logo {
     width: 300px;
     height: auto;
+    margin: 0 auto;
+  }
+
+  .hero-social {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    margin: 0;
   }
 
   .hero-social a {
