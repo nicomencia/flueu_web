@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
-        <img src="/flueu_logo.jpg" alt="Fleue Studio" className="hero-logo" />
+        <img src="/Flueu__1_-removebg-preview.png" alt="Fleue Studio" className="hero-logo" />
 
         <div className="hero-social">
           <a href="mailto:fleuustudio@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">

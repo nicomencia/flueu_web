@@ -14,12 +14,11 @@
 }
 
 .hero-logo {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 50%;
+  width: 600px;
+  height: auto;
+  object-fit: contain;
   margin: 0 auto var(--spacing-lg);
-  box-shadow: 0 10px 40px rgba(0, 82, 204, 0.2);
+  filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.15));
   animation: fadeInScale 1s ease-out;
 }
 
@@ -73,8 +72,8 @@
 
 @media (max-width: 768px) {
   .hero-logo {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: auto;
   }
 
   .hero-social a {
