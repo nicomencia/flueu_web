@@ -34,13 +34,7 @@
   background: var(--color-white);
   border-radius: 0;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-}
-
-.creation-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 82, 204, 0.15);
 }
 
 .creation-image {
