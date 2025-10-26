@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Creations from './components/Creations';
 import Collections from './components/Collections';
+import Custom from './components/Custom';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -15,6 +16,8 @@ export default function App() {
         return <Collections />;
       case 'creations':
         return <Creations />;
+      case 'custom':
+        return <Custom />;
       case 'sobre-mi':
         return <About />;
       default:

@@ -45,6 +45,11 @@ export default function Navigation({ currentView, setCurrentView }) {
             </button>
           </li>
           <li>
+            <button onClick={() => handleNavClick('custom')}>
+              Custom
+            </button>
+          </li>
+          <li>
             <button onClick={() => handleNavClick('sobre-mi')}>
               Sobre mí
             </button>

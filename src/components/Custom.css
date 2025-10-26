@@ -1,0 +1,114 @@
+.custom {
+  padding: var(--spacing-xl) 0;
+  background: var(--color-white);
+}
+
+.custom-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.custom-text h2 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: var(--color-blue);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.custom-text p {
+  color: var(--color-gray);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+  font-size: 1.05rem;
+}
+
+.custom-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+}
+
+.custom-feature {
+  background: var(--color-cream);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.custom-feature:hover {
+  transform: translateY(-4px);
+}
+
+.custom-feature h3 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-blue);
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.custom-feature p {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  margin: 0;
+}
+
+.custom-cta {
+  background: var(--color-blue);
+  color: var(--color-white);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  margin-top: var(--spacing-md);
+}
+
+.custom-cta:hover {
+  background: var(--color-dark-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.custom-image {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.custom-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 968px) {
+  .custom-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .custom-text h2 {
+    font-size: 2rem;
+  }
+
+  .custom-features {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-image {
+    order: -1;
+    max-height: 400px;
+  }
+}
