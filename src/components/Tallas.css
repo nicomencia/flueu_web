@@ -43,7 +43,7 @@
 .tallas-media-item {
   aspect-ratio: 1;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0;
   background: var(--color-light-gray);
 }
 
