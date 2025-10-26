@@ -5,6 +5,7 @@ import About from './components/About';
 import Creations from './components/Creations';
 import Collections from './components/Collections';
 import Custom from './components/Custom';
+import Tallas from './components/Tallas';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -18,6 +19,8 @@ export default function App() {
         return <Creations />;
       case 'custom':
         return <Custom />;
+      case 'tallas':
+        return <Tallas />;
       case 'sobre-mi':
         return <About />;
       default:
