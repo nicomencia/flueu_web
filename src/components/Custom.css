@@ -11,7 +11,7 @@
 
 .custom-intro h2 {
   font-family: var(--font-serif);
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 3rem);
   color: var(--color-blue);
   margin-bottom: var(--spacing-md);
   line-height: 1.2;
@@ -137,10 +137,6 @@
 }
 
 @media (max-width: 968px) {
-  .custom-intro h2 {
-    font-size: 2rem;
-  }
-
   .custom-section h3 {
     font-size: 1.5rem;
   }
