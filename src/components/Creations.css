@@ -34,7 +34,6 @@
   background: var(--color-white);
   border-radius: 0;
   overflow: hidden;
-  cursor: pointer;
 }
 
 .creation-image {
