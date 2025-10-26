@@ -1,6 +1,6 @@
 import './Footer.css';
 
-export default function Footer() {
+export default function Footer({ setCurrentView }) {
   return (
     <footer className="footer">
       <div className="container">
@@ -13,9 +13,9 @@ export default function Footer() {
           <div className="footer-links">
             <h4>Navegar</h4>
             <ul>
-              <li><a href="#colecciones">Colecciones</a></li>
-              <li><a href="#creations">Creaciones</a></li>
-              <li><a href="#sobre-mi">Sobre Mí</a></li>
+              <li><button onClick={() => setCurrentView('colecciones')}>Colecciones</button></li>
+              <li><button onClick={() => setCurrentView('creations')}>Creaciones</button></li>
+              <li><button onClick={() => setCurrentView('sobre-mi')}>Sobre Mí</button></li>
             </ul>
           </div>
 

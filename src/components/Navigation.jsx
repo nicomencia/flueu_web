@@ -1,12 +1,25 @@
 import { useState } from 'react';
 import './Navigation.css';
 
-export default function Navigation() {
+export default function Navigation({ currentView, setCurrentView }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleNavClick = (view) => {
+    setCurrentView(view);
+    setIsOpen(false);
+  };
 
   return (
     <nav className="navigation">
       <div className="nav-container">
+        <button
+          className="nav-logo-btn"
+          onClick={() => handleNavClick('home')}
+          aria-label="Ir a inicio"
+        >
+          <img src="/logo_letras.png" alt="Flueu Studio" className="nav-logo" />
+        </button>
+
         <button
           className="nav-toggle"
           onClick={() => setIsOpen(!isOpen)}
@@ -18,9 +31,21 @@ export default function Navigation() {
         </button>
 
         <ul className={`nav-menu ${isOpen ? 'nav-menu--open' : ''}`}>
-          <li><a href="#colecciones" onClick={() => setIsOpen(false)}>Colecciones</a></li>
-          <li><a href="#creations" onClick={() => setIsOpen(false)}>Creaciones</a></li>
-          <li><a href="#sobre-mi" onClick={() => setIsOpen(false)}>Sobre Mí</a></li>
+          <li>
+            <button onClick={() => handleNavClick('colecciones')}>
+              Colecciones
+            </button>
+          </li>
+          <li>
+            <button onClick={() => handleNavClick('creations')}>
+              Creaciones
+            </button>
+          </li>
+          <li>
+            <button onClick={() => handleNavClick('sobre-mi')}>
+              Sobre Mí
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
