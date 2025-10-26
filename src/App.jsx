@@ -16,7 +16,7 @@ export default function App() {
       case 'colecciones':
         return <Collections />;
       case 'creations':
-        return <Creations />;
+        return <Creations setCurrentView={setCurrentView} />;
       case 'custom':
         return <Custom />;
       case 'tallas':
