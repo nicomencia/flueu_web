@@ -13,13 +13,15 @@ export default function Navigation({ currentView, setCurrentView }) {
   return (
     <nav className={`navigation ${!isHome ? 'navigation--solid' : ''}`}>
       <div className="nav-container">
-        <button
-          className="nav-logo-btn"
-          onClick={() => handleNavClick('home')}
-          aria-label="Ir a inicio"
-        >
-          <img src="/logo_letras.png" alt="Flueu Studio" className="nav-logo" />
-        </button>
+        {!isHome && (
+          <button
+            className="nav-logo-btn"
+            onClick={() => handleNavClick('home')}
+            aria-label="Ir a inicio"
+          >
+            <img src="/logo.png" alt="Flueu Studio" className="nav-logo" />
+          </button>
+        )}
 
         <button
           className="nav-toggle"
