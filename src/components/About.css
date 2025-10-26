@@ -52,8 +52,8 @@
 }
 
 @media (max-width: 768px) {
-  .about h2 {
-    margin-top: 5rem;
+  .about {
+    padding-top: 8rem;
   }
 
   .about-content {
