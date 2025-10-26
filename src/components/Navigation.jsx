@@ -3,6 +3,7 @@ import './Navigation.css';
 
 export default function Navigation({ currentView, setCurrentView }) {
   const [isOpen, setIsOpen] = useState(false);
+  const isHome = currentView === 'home';
 
   const handleNavClick = (view) => {
     setCurrentView(view);
@@ -10,7 +11,7 @@ export default function Navigation({ currentView, setCurrentView }) {
   };
 
   return (
-    <nav className="navigation">
+    <nav className={`navigation ${!isHome ? 'navigation--solid' : ''}`}>
       <div className="nav-container">
         <button
           className="nav-logo-btn"

@@ -8,6 +8,25 @@
   transition: all 0.3s ease;
 }
 
+.navigation--solid {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navigation--solid .nav-menu button {
+  color: var(--color-blue);
+  text-shadow: none;
+}
+
+.navigation--solid .nav-toggle span {
+  background: var(--color-blue);
+}
+
+.navigation--solid .nav-logo {
+  filter: none;
+}
+
 .nav-container {
   max-width: 1400px;
   margin: 0 auto;
