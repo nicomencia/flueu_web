@@ -6,7 +6,7 @@ export default function Custom() {
       <div className="container">
         <div className="custom-content">
           <div className="custom-text">
-            <h2>Pedidos Personalizados</h2>
+            <h2>Custom</h2>
             <p>
               ¿Tienes una idea especial en mente? Creo piezas únicas y personalizadas
               adaptadas a tus gustos y necesidades.
