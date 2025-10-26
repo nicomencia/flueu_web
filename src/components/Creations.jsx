@@ -15,7 +15,7 @@ export default function Creations() {
   }, []);
 
   useEffect(() => {
-    if (activeFilter === 'Todos') {
+    if (activeFilter === 'Todas') {
       setFilteredProducts(products);
     } else {
       const categoryMap = {
