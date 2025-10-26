@@ -46,7 +46,7 @@ export default function Navigation({ currentView, setCurrentView }) {
           </li>
           <li>
             <button onClick={() => handleNavClick('sobre-mi')}>
-              Sobre Mí
+              Sobre mí
             </button>
           </li>
         </ul>
