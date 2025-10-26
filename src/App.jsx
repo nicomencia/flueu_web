@@ -18,7 +18,7 @@ export default function App() {
       case 'creations':
         return <Creations setCurrentView={setCurrentView} />;
       case 'custom':
-        return <Custom />;
+        return <Custom setCurrentView={setCurrentView} />;
       case 'tallas':
         return <Tallas />;
       case 'sobre-mi':
