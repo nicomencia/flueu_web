@@ -7,7 +7,7 @@ const categories = ['Todas', 'Anillos', 'Pendientes', 'Colgantes', 'Pinzas'];
 export default function Creations() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [activeFilter, setActiveFilter] = useState('Todos');
+  const [activeFilter, setActiveFilter] = useState('Todas');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
