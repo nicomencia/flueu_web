@@ -15,7 +15,7 @@ export default function Footer({ setCurrentView }) {
             <ul>
               <li><button onClick={() => setCurrentView('colecciones')}>Colecciones</button></li>
               <li><button onClick={() => setCurrentView('creations')}>Creaciones</button></li>
-              <li><button onClick={() => setCurrentView('sobre-mi')}>Sobre Mí</button></li>
+              <li><button onClick={() => setCurrentView('sobre-mi')}>Sobre mí</button></li>
             </ul>
           </div>
 
