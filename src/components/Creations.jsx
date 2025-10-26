@@ -4,7 +4,7 @@ import './Creations.css';
 
 const categories = ['Todas', 'Anillos', 'Pendientes', 'Colgantes', 'Pinzas'];
 
-export default function Creations() {
+export default function Creations({ setCurrentView }) {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [activeFilter, setActiveFilter] = useState('Todas');
@@ -76,7 +76,7 @@ export default function Creations() {
 
         {activeFilter === 'Anillos' && (
           <div className="tallas-link-wrapper">
-            <a href="#tallas" className="tallas-link">Tallas</a>
+            <button onClick={() => setCurrentView('tallas')} className="tallas-link">Tallas</button>
           </div>
         )}
 
