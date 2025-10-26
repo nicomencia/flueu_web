@@ -11,6 +11,17 @@ export default function Tallas() {
               Información sobre las tallas de nuestras joyas.
             </p>
           </div>
+          <div className="tallas-media">
+            <div className="tallas-media-item">
+              <video controls>
+                <source src="/talla.mp4" type="video/mp4" />
+                Tu navegador no soporta el elemento de video.
+              </video>
+            </div>
+            <div className="tallas-media-item">
+              <img src="/ELJARDIN0001.jpg" alt="Anillo" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
