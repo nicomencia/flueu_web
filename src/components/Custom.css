@@ -33,8 +33,19 @@
   font-family: var(--font-serif);
   font-size: 2rem;
   color: var(--color-blue);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
   text-align: center;
+}
+
+.custom-section-description {
+  text-align: center;
+  color: var(--color-gray);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .custom-flowers-grid {

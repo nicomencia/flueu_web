@@ -64,6 +64,7 @@ export default function Custom() {
         {flowers.length > 0 && (
           <div className="custom-section">
             <h3>Flores disponibles</h3>
+            <p className="custom-section-description">Elige entre nuestra selección de flores secas naturales para dar vida a tu pieza personalizada.</p>
             <div className="custom-flowers-grid">
               {flowers.map(flower => (
                 <div key={flower.id} className="custom-flower-item">
@@ -77,6 +78,7 @@ export default function Custom() {
         {accessoryTypes.length > 0 && (
           <div className="custom-section">
             <h3>Tipo de accesorio</h3>
+            <p className="custom-section-description">Selecciona el formato que mejor se adapte a tu estilo: anillos, pendientes, colgantes o pinzas.</p>
             <div className="custom-accessory-grid">
               {accessoryTypes.map(accessory => (
                 <div key={accessory.id} className="custom-accessory-item">
@@ -91,6 +93,7 @@ export default function Custom() {
         {plasticColors.length > 0 && (
           <div className="custom-section">
             <h3>Color del plástico</h3>
+            <p className="custom-section-description">Escoge el tono de resina que mejor complemente tu diseño y estilo personal.</p>
             <div className="custom-color-grid">
               {plasticColors.map(color => (
                 <div key={color.id} className="custom-color-item">
