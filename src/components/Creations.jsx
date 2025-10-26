@@ -76,7 +76,7 @@ export default function Creations() {
 
         {activeFilter === 'Anillos' && (
           <div className="tallas-link-wrapper">
-            <a href="#tallas" className="tallas-link">Ver Tallas</a>
+            <a href="#tallas" className="tallas-link">Tallas</a>
           </div>
         )}
 
