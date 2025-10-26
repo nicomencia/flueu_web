@@ -81,7 +81,10 @@ export default function Creations() {
             {filteredProducts.map((product) => (
               <div key={product.id} className="creation-card">
                 <div className="creation-image">
-                  <img src={product.image_url} alt={product.name} />
+                  <img src={product.image_url} alt={product.name} className="creation-image-primary" />
+                  {product.secondary_image_url && (
+                    <img src={product.secondary_image_url} alt={product.name} className="creation-image-secondary" />
+                  )}
                 </div>
                 <div className="creation-info">
                   <h3>{product.name}</h3>
