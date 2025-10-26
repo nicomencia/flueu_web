@@ -18,6 +18,18 @@
   flex-wrap: wrap;
 }
 
+.tallas-link-wrapper {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.tallas-link {
+  color: var(--color-blue);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.125rem;
+}
+
 .creations-empty {
   text-align: center;
   color: var(--color-gray);

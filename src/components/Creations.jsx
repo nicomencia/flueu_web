@@ -74,6 +74,12 @@ export default function Creations() {
           ))}
         </div>
 
+        {activeFilter === 'Anillos' && (
+          <div className="tallas-link-wrapper">
+            <a href="#tallas" className="tallas-link">Ver Tallas</a>
+          </div>
+        )}
+
         {filteredProducts.length === 0 ? (
           <p className="creations-empty">No hay productos disponibles en esta categoría aún.</p>
         ) : (
