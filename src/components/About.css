@@ -52,6 +52,10 @@
 }
 
 @media (max-width: 768px) {
+  .about h2 {
+    margin-top: 5rem;
+  }
+
   .about-content {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
