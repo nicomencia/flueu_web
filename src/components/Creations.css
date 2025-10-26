@@ -20,14 +20,14 @@
 
 .tallas-link-wrapper {
   text-align: left;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
 }
 
 .tallas-link {
   color: var(--color-blue);
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 .creations-empty {
