@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import './Creations.css';
 
-const categories = ['Todos', 'Anillos', 'Pendientes', 'Colgantes', 'Pinzas'];
+const categories = ['Todas', 'Anillos', 'Pendientes', 'Colgantes', 'Pinzas'];
 
 export default function Creations() {
   const [products, setProducts] = useState([]);
