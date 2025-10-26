@@ -14,6 +14,7 @@
   font-size: clamp(1.5rem, 4vw, 3rem);
   color: var(--color-blue);
   margin-bottom: var(--spacing-md);
+  margin-top: var(--spacing-lg);
   line-height: 1.2;
 }
 

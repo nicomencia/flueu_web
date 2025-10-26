@@ -18,6 +18,7 @@
 
 .about h2 {
   margin-bottom: var(--spacing-md);
+  margin-top: var(--spacing-lg);
   color: var(--color-blue);
 }
 
