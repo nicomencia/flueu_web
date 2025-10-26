@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import './Creations.css';
 
-const categories = ['Todos', 'Anillos', 'Pendientes', 'Colgantes', 'Pinzas de pelo'];
+const categories = ['Todos', 'Anillos', 'Pendientes', 'Colgantes', 'Pinzas'];
 
 export default function Creations() {
   const [products, setProducts] = useState([]);
@@ -22,7 +22,7 @@ export default function Creations() {
         'Anillos': 'Anillo',
         'Pendientes': 'Pendiente',
         'Colgantes': 'Colgante',
-        'Pinzas de pelo': 'Pinza'
+        'Pinzas': 'Pinza'
       };
       const dbCategory = categoryMap[activeFilter] || activeFilter;
       setFilteredProducts(products.filter(p => p.category === dbCategory));
