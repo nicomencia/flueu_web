@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import './Collections.css';
 
-export default function Collections() {
+export default function Collections({ setCurrentView, setSelectedCollection }) {
   const [collections, setCollections] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -54,7 +54,14 @@ export default function Collections() {
         <h2>Colecciones</h2>
         <div className="collections-list">
           {collections.map((collection) => (
-            <div key={collection.id} className="collection-section">
+            <div
+              key={collection.id}
+              className="collection-section"
+              onClick={() => {
+                setSelectedCollection(collection.id);
+                setCurrentView('collection-detail');
+              }}
+            >
               <div className="collection-header">
                 {collection.image_url && (
                   <img src={collection.image_url} alt={collection.name} className="collection-hero" />
