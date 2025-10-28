@@ -44,7 +44,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: var(--spacing-md);
 }
 
 .about-image img {
