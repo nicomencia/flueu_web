@@ -25,6 +25,31 @@
   font-size: 1.00rem;
 }
 
+.custom-intro ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-md) auto;
+  max-width: 700px;
+  text-align: left;
+}
+
+.custom-intro ul li {
+  color: var(--color-gray);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.00rem;
+  padding-left: var(--spacing-md);
+  position: relative;
+}
+
+.custom-intro ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-blue);
+  font-weight: bold;
+}
+
 .custom-section {
   margin-bottom: var(--spacing-xl);
 }
