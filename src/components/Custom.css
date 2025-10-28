@@ -30,7 +30,7 @@
   padding: 0;
   margin: var(--spacing-md) auto;
   max-width: 700px;
-  text-align: center;
+  text-align: left;
 }
 
 .custom-intro ul li {
@@ -38,8 +38,6 @@
   line-height: 1.8;
   margin-bottom: var(--spacing-sm);
   font-size: 1.00rem;
-  display: inline-block;
-  text-align: left;
 }
 
 .custom-intro ul li::before {
