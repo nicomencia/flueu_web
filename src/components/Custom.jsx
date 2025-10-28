@@ -76,7 +76,7 @@ export default function Custom({ setCurrentView }) {
         {flowers.length > 0 && (
           <div className="custom-section">
             <h3>Flores disponibles</h3>
-            <p className="custom-section-description">Flor o elementos en que quieras que me inspire;</p>
+            <p className="custom-section-description"></p>
             <div className="custom-flowers-grid">
               {flowers.map(flower => (
                 <div key={flower.id} className="custom-flower-item">
@@ -91,7 +91,6 @@ export default function Custom({ setCurrentView }) {
           <div className="custom-section">
             <h3>Tipo de accesorio</h3>
             <p className="custom-section-description">
-              Selecciona el formato que mejor se adapte a tu estilo: anillos, pendientes, colgantes o pinzas.
               Para los anillos aquí están las <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' }) || setCurrentView?.('tallas')} className="inline-link">Tallas</button>
             </p>
             <div className="custom-accessory-grid">
