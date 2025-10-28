@@ -65,7 +65,7 @@
 .custom-section-description {
   text-align: center;
   color: var(--color-gray);
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
   margin-bottom: var(--spacing-lg);
   max-width: 600px;
