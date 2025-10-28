@@ -61,7 +61,7 @@ export default function Collections() {
                 )}
                 <div className="collection-info">
                   <h3>{collection.name}</h3>
-                  <p className="collection-date">{new Date(collection.created_at).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                  <p className="collection-date">{new Date(collection.created_at).toLocaleDateString('es-ES', { year: 'numeric', month: 'long'})}</p>
                   {collection.description && (
                     <p className="collection-description">{collection.description}</p>
                   )}
