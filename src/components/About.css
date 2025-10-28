@@ -1,5 +1,5 @@
 .about {
-  padding: calc(var(--spacing-xl) + 5rem) 0 var(--spacing-xl) 0;
+  padding: var(--spacing-xl) 0;
   background: var(--color-cream);
 }
 
