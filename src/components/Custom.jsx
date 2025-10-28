@@ -57,6 +57,19 @@ export default function Custom({ setCurrentView }) {
             En este apartado encontrarás tanto flores que tengo disponibles como los materiales con los que puedo darle forma a tus ideas. 
             Juntas las transformaremos en un accesorio que encaje con lo que estás buscando: anillo, colgante, pendientes o pinza.
           </p>
+          <p>
+            Deberás elegir:
+              - Flor o elementos en que quieras que me inspire; 
+              - Tipo de accesorio; 
+              - En caso de ser un anillo aquí te enseño cómo seleccionar tu talla. 
+              - Color del plástico, según las botellas recicladas de las que disponga en cada momento. 
+          </p>
+          <p>
+            El resto déjalo fluir: el fuego y la creatividad harán el trabajo.
+          </p>
+
+
+
         </div>
 
         {flowers.length > 0 && (
