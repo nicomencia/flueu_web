@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-lg);
-  align-items: center;
+  align-items: flex-start;
 }
 
 .about-text {
@@ -45,7 +45,6 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: var(--spacing-md);
 }
 
 .about-image img {
