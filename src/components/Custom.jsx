@@ -7,6 +7,8 @@ export default function Custom({ setCurrentView }) {
   const [accessoryTypes, setAccessoryTypes] = useState([]);
   const [plasticColors, setPlasticColors] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState(null);
 
   useEffect(() => {
     fetchCustomData();
@@ -33,6 +35,25 @@ export default function Custom({ setCurrentView }) {
       setLoading(false);
     }
   }
+
+  function openLightbox(imageSrc) {
+    setLightboxImage(imageSrc);
+    setLightboxOpen(true);
+  }
+
+  function closeLightbox() {
+    setLightboxOpen(false);
+    setLightboxImage(null);
+  }
+
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (!lightboxOpen) return;
+      if (e.key === 'Escape') closeLightbox();
+    }
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen]);
 
   if (loading) {
     return (
@@ -79,7 +100,7 @@ export default function Custom({ setCurrentView }) {
             <p className="custom-section-description"></p>
             <div className="custom-flowers-grid">
               {flowers.map(flower => (
-                <div key={flower.id} className="custom-flower-item">
+                <div key={flower.id} className="custom-flower-item" onClick={() => openLightbox(flower.image_url)}>
                   <img src={flower.image_url} alt={flower.alt_text} />
                 </div>
               ))}
@@ -95,7 +116,7 @@ export default function Custom({ setCurrentView }) {
             </p>
             <div className="custom-accessory-grid">
               {accessoryTypes.map(accessory => (
-                <div key={accessory.id} className="custom-accessory-item">
+                <div key={accessory.id} className="custom-accessory-item" onClick={() => openLightbox(accessory.image_url)}>
                   <img src={accessory.image_url} alt={accessory.name} />
                   <p>{accessory.name}</p>
                 </div>
@@ -110,11 +131,20 @@ export default function Custom({ setCurrentView }) {
             <p className="custom-section-description"></p>
             <div className="custom-color-grid">
               {plasticColors.map(color => (
-                <div key={color.id} className="custom-color-item">
+                <div key={color.id} className="custom-color-item" onClick={() => openLightbox(color.image_url)}>
                   <img src={color.image_url} alt={color.name} />
                   <p>{color.name}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        )}
+
+        {lightboxOpen && lightboxImage && (
+          <div className="lightbox" onClick={closeLightbox}>
+            <button className="lightbox-close" onClick={closeLightbox}>&times;</button>
+            <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+              <img src={lightboxImage} alt="Full view" className="lightbox-image" />
             </div>
           </div>
         )}
