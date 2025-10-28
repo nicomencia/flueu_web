@@ -51,13 +51,11 @@ export default function Custom({ setCurrentView }) {
         <div className="custom-intro">
           <h2>Custom</h2>
           <p>
-            ¿Tienes una idea especial en mente? Creo piezas únicas y personalizadas
-            adaptadas a tus gustos y necesidades.
+            En Flueu, cada creación es una conversación. 
           </p>
           <p>
-            Cada pieza personalizada es una colaboración entre tu visión y mi artesanía.
-            Desde el diseño hasta los detalles finales, trabajaremos juntos para crear
-            algo verdaderamente único.
+            En este apartado encontrarás tanto flores que tengo disponibles como los materiales con los que puedo darle forma a tus ideas. 
+            Juntas las transformaremos en un accesorio que encaje con lo que estás buscando: anillo, colgante, pendientes o pinza. 
           </p>
         </div>
 
