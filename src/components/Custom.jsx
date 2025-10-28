@@ -55,6 +55,7 @@ export default function Custom({ setCurrentView }) {
           </p>
           <p>
             En este apartado encontrarás tanto flores que tengo disponibles como los materiales con los que puedo darle forma a tus ideas. 
+            Juntas las transformaremos en un accesorio que encaje con lo que estás buscando: anillo, colgante, pendientes o pinza.
           </p>
           <p>
             Juntas las transformaremos en un accesorio que encaje con lo que estás buscando: anillo, colgante, pendientes o pinza. 
