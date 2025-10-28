@@ -62,7 +62,7 @@ export default function Custom({ setCurrentView }) {
         {flowers.length > 0 && (
           <div className="custom-section">
             <h3>Flores disponibles</h3>
-            <p className="custom-section-description">Elige entre nuestra selección de flores secas naturales para dar vida a tu pieza personalizada.</p>
+            <p className="custom-section-description">Flor o elementos en que quieras que me inspire;</p>
             <div className="custom-flowers-grid">
               {flowers.map(flower => (
                 <div key={flower.id} className="custom-flower-item">
