@@ -38,14 +38,12 @@
   line-height: 1.8;
   margin-bottom: var(--spacing-sm);
   font-size: 1.00rem;
-  padding-left: var(--spacing-md);
-  position: relative;
+  display: inline-block;
+  text-align: left;
 }
 
 .custom-intro ul li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
+  content: "• ";
   color: var(--color-blue);
   font-weight: bold;
 }
