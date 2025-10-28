@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,6 +10,10 @@ import Footer from './components/Footer';
 
 export default function App() {
   const [currentView, setCurrentView] = useState('home');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentView]);
 
   const renderContent = () => {
     switch (currentView) {
