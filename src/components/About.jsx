@@ -4,9 +4,9 @@ export default function About() {
   return (
     <section id="sobre-mi" className="about">
       <div className="container">
+        <h2>Sobre mí</h2>
         <div className="about-content">
           <div className="about-text">
-            <h2>Sobre mí</h2>
             <p>Flueu nace de la curiosidad de transformar lo cotidiano en algo algo bello.</p>
 
             <p>De las botellas olvidadas surge una nueva materia viva para el diseño: el plástico se funde, se mueve, se retuerce en contacto con el fuego y encuentra su nueva forma en piezas únicas creadas a mano con mucho mimo.</p>
