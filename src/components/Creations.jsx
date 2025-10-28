@@ -9,6 +9,9 @@ export default function Creations({ setCurrentView }) {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [activeFilter, setActiveFilter] = useState('Todas');
   const [loading, setLoading] = useState(true);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxProduct, setLightboxProduct] = useState(null);
+  const [lightboxImageIndex, setLightboxImageIndex] = useState(0);
 
   useEffect(() => {
     fetchProducts();
@@ -45,6 +48,41 @@ export default function Creations({ setCurrentView }) {
       setLoading(false);
     }
   }
+
+  function openLightbox(product) {
+    setLightboxProduct(product);
+    setLightboxImageIndex(0);
+    setLightboxOpen(true);
+  }
+
+  function closeLightbox() {
+    setLightboxOpen(false);
+    setLightboxProduct(null);
+    setLightboxImageIndex(0);
+  }
+
+  function nextImage() {
+    if (lightboxProduct && lightboxProduct.secondary_image_url) {
+      setLightboxImageIndex((prev) => (prev === 0 ? 1 : 0));
+    }
+  }
+
+  function prevImage() {
+    if (lightboxProduct && lightboxProduct.secondary_image_url) {
+      setLightboxImageIndex((prev) => (prev === 0 ? 1 : 0));
+    }
+  }
+
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (!lightboxOpen) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    }
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen, lightboxProduct]);
 
   if (loading) {
     return (
@@ -85,7 +123,7 @@ export default function Creations({ setCurrentView }) {
         ) : (
           <div className="creations-grid">
             {filteredProducts.map((product) => (
-              <div key={product.id} className="creation-card">
+              <div key={product.id} className="creation-card" onClick={() => openLightbox(product)}>
                 <div className="creation-image">
                   <img src={product.image_url} alt={product.name} className="creation-image-primary" />
                   {product.secondary_image_url && (
@@ -100,6 +138,35 @@ export default function Creations({ setCurrentView }) {
                 </div>
               </div>
             ))}
+          </div>
+        )}
+
+        {lightboxOpen && lightboxProduct && (
+          <div className="lightbox" onClick={closeLightbox}>
+            <button className="lightbox-close" onClick={closeLightbox}>&times;</button>
+
+            <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+              <img
+                src={lightboxImageIndex === 0 ? lightboxProduct.image_url : lightboxProduct.secondary_image_url}
+                alt={lightboxProduct.name}
+                className="lightbox-image"
+              />
+
+              {lightboxProduct.secondary_image_url && (
+                <>
+                  <button className="lightbox-arrow lightbox-arrow-left" onClick={prevImage}>
+                    &#8249;
+                  </button>
+                  <button className="lightbox-arrow lightbox-arrow-right" onClick={nextImage}>
+                    &#8250;
+                  </button>
+                  <div className="lightbox-indicators">
+                    <span className={lightboxImageIndex === 0 ? 'active' : ''} onClick={() => setLightboxImageIndex(0)}></span>
+                    <span className={lightboxImageIndex === 1 ? 'active' : ''} onClick={() => setLightboxImageIndex(1)}></span>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         )}
       </div>
