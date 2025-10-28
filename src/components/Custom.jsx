@@ -65,7 +65,7 @@ export default function Custom({ setCurrentView }) {
           <ul>
             <li>Flor o elementos en que quieras que me inspire;</li>
             <li>Tipo de accesorio;<br />
-            En caso de ser un anillo aquí te enseño cómo seleccionar tu  <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' }) || setCurrentView?.('tallas')} className="inline-link">Tallas</button>.</li>
+            En caso de ser un anillo aquí te enseño cómo seleccionar tu  <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' }) || setCurrentView?.('tallas')} className="inline-link">Talla</button>.</li>
             <li>Color del plástico, según las botellas recicladas de las que disponga en cada momento.</li>
           </ul>
           <p>
