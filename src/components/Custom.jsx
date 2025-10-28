@@ -65,7 +65,7 @@ export default function Custom({ setCurrentView }) {
           <ul>
             <li>Flor o elementos en que quieras que me inspire;</li>
             <li>Tipo de accesorio;<br />
-            En caso de ser un anillo aquí te enseño cómo seleccionar tu  <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' }) || setCurrentView?.('tallas')} className="inline-link">Talla</button>.</li>
+            En caso de ser un anillo aquí te enseño cómo seleccionar tu  <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' }) || setCurrentView?.('tallas')} className="inline-link">Talla</button></li>
             <li>Color del plástico, según las botellas recicladas de las que disponga en cada momento.</li>
           </ul>
           <p>
@@ -107,7 +107,7 @@ export default function Custom({ setCurrentView }) {
         {plasticColors.length > 0 && (
           <div className="custom-section">
             <h3>Color del plástico</h3>
-            <p className="custom-section-description">Escoge el tono de resina que mejor complemente tu diseño y estilo personal.</p>
+            <p className="custom-section-description"></p>
             <div className="custom-color-grid">
               {plasticColors.map(color => (
                 <div key={color.id} className="custom-color-item">
