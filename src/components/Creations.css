@@ -47,11 +47,6 @@
   border-radius: 0;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.creation-card:hover {
-  transform: translateY(-4px);
 }
 
 .creation-image {
