@@ -51,7 +51,25 @@ export default function Custom({ setCurrentView }) {
         <div className="custom-intro">
           <h2>Custom</h2>
           <p>
-            En Flueu, cada creación es una conversación. 
+            En Flueu, cada creación es una conversación.
+          </p>
+          <p>
+            En este apartado encontrarás tanto flores que tengo disponibles como los materiales con los que puedo darle forma a tus ideas.
+          </p>
+          <p>
+            Juntas las transformaremos en un accesorio que encaje con lo que estás buscando: anillo, colgante, pendientes o pinza.
+          </p>
+          <p>
+            Deberás elegir:
+          </p>
+          <ul>
+            <li>Flor o elementos en que quieras que me inspire;</li>
+            <li>Tipo de accesorio;<br />
+            En caso de ser un anillo aquí te enseño cómo seleccionar tu talla.</li>
+            <li>Color del plástico, según las botellas recicladas de las que disponga en cada momento.</li>
+          </ul>
+          <p>
+            El resto déjalo fluir: el fuego y la creatividad harán el trabajo.
           </p>
         </div>
 
