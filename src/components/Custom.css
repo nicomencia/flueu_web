@@ -46,6 +46,26 @@
   font-weight: bold;
 }
 
+.custom-intro ul li .inline-link {
+  background: none;
+  border: none;
+  color: var(--color-blue);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 2px 6px;
+  border-bottom: 2px solid var(--color-blue);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.custom-intro ul li .inline-link:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border-radius: 3px;
+}
+
 .custom-section {
   margin-bottom: var(--spacing-xl);
 }
