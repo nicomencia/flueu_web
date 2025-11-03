@@ -117,6 +117,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease;
+  max-width: 400px;
+  justify-self: center;
 }
 
 .custom-flower-item:hover {
@@ -143,6 +145,8 @@
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease;
+  max-width: 350px;
+  justify-self: center;
 }
 
 .custom-accessory-item:hover {
@@ -179,6 +183,8 @@
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease;
+  max-width: 300px;
+  justify-self: center;
 }
 
 .custom-color-item:hover {
