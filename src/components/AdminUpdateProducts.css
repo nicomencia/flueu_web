@@ -1,0 +1,169 @@
+.admin-update {
+  min-height: 100vh;
+  padding: var(--spacing-xl);
+  background: var(--color-light);
+}
+
+.admin-update-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  color: var(--color-gray);
+  font-size: 1.2rem;
+}
+
+.admin-update-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-update-card h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-blue);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.admin-update-actions {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.admin-update-button {
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.admin-update-button.primary {
+  background: var(--color-blue);
+  color: white;
+}
+
+.admin-update-button.primary:hover:not(:disabled) {
+  background: #1a5490;
+}
+
+.admin-update-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-update-message {
+  padding: var(--spacing-md);
+  border-radius: 4px;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  font-family: var(--font-sans);
+}
+
+.admin-update-message.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.admin-update-message.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.admin-update-info {
+  background: var(--color-light);
+  padding: var(--spacing-md);
+  border-radius: 4px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.admin-update-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--color-blue);
+  margin-bottom: var(--spacing-sm);
+}
+
+.admin-update-info p {
+  color: var(--color-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.admin-update-products {
+  margin-top: var(--spacing-lg);
+}
+
+.admin-update-products h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--color-blue);
+  margin-bottom: var(--spacing-md);
+}
+
+.admin-update-product {
+  padding: var(--spacing-md);
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.product-info strong {
+  font-family: var(--font-sans);
+  color: var(--color-blue);
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.product-urls {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
+.product-urls > div {
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.product-urls .label {
+  font-weight: 500;
+  color: var(--color-gray);
+  min-width: 80px;
+}
+
+.product-urls .url {
+  color: #666;
+  word-break: break-all;
+}
+
+@media (max-width: 968px) {
+  .admin-update {
+    padding: var(--spacing-md);
+  }
+
+  .admin-update-card {
+    padding: var(--spacing-lg);
+  }
+
+  .admin-update-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .product-urls > div {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}

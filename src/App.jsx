@@ -8,6 +8,8 @@ import CollectionDetail from './components/CollectionDetail';
 import Custom from './components/Custom';
 import Tallas from './components/Tallas';
 import Footer from './components/Footer';
+import AdminUpload from './components/AdminUpload';
+import AdminUpdateProducts from './components/AdminUpdateProducts';
 
 export default function App() {
   const [currentView, setCurrentView] = useState('home');
@@ -31,6 +33,10 @@ export default function App() {
         return <Tallas />;
       case 'sobre-mi':
         return <About />;
+      case 'admin-upload':
+        return <AdminUpload />;
+      case 'admin-update':
+        return <AdminUpdateProducts />;
       default:
         return <Hero />;
     }
