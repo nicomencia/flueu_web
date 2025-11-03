@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { supabase } from './lib/supabase';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,16 +9,31 @@ import CollectionDetail from './components/CollectionDetail';
 import Custom from './components/Custom';
 import Tallas from './components/Tallas';
 import Footer from './components/Footer';
-import AdminUpload from './components/AdminUpload';
-import AdminUpdateProducts from './components/AdminUpdateProducts';
+import AdminLogin from './components/AdminLogin';
+import AdminDashboard from './components/AdminDashboard';
 
 export default function App() {
   const [currentView, setCurrentView] = useState('home');
   const [selectedCollection, setSelectedCollection] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentView]);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setIsAuthenticated(!!session);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsAuthenticated(!!session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   const renderContent = () => {
     switch (currentView) {
@@ -33,10 +49,12 @@ export default function App() {
         return <Tallas />;
       case 'sobre-mi':
         return <About />;
-      case 'admin-upload':
-        return <AdminUpload />;
-      case 'admin-update':
-        return <AdminUpdateProducts />;
+      case 'admin':
+        if (isAuthenticated) {
+          return <AdminDashboard />;
+        } else {
+          return <AdminLogin onLoginSuccess={() => setIsAuthenticated(true)} />;
+        }
       default:
         return <Hero />;
     }

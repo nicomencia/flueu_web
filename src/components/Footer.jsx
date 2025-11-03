@@ -50,11 +50,6 @@ export default function Footer({ setCurrentView }) {
 
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} Flueu Studio. Todos los derechos reservados.</p>
-          <div className="footer-admin">
-            <button onClick={() => setCurrentView('admin-upload')}>Admin Upload</button>
-            <span>|</span>
-            <button onClick={() => setCurrentView('admin-update')}>Admin Update</button>
-          </div>
         </div>
       </div>
     </footer>

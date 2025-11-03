@@ -54,6 +54,11 @@ export default function Navigation({ currentView, setCurrentView }) {
               Sobre mí
             </button>
           </li>
+          <li>
+            <button onClick={() => handleNavClick('admin')}>
+              Admin
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
