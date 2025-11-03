@@ -19,7 +19,7 @@ export default function Tallas() {
               </video>
             </div>
             <div className="tallas-media-item">
-              <img src="/ELJARDIN0001.jpg" alt="Anillo" />
+              <img src="/talla.jpg" alt="Anillo" />
             </div>
           </div>
         </div>
