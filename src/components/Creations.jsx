@@ -7,20 +7,14 @@ const categories = ['Todas', 'Anillos', 'Pendientes', 'Collares', 'Pinzas'];
 export default function Creations({ setCurrentView }) {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [displayedProducts, setDisplayedProducts] = useState([]);
   const [activeFilter, setActiveFilter] = useState('Todas');
   const [loading, setLoading] = useState(true);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxProduct, setLightboxProduct] = useState(null);
   const [lightboxImageIndex, setLightboxImageIndex] = useState(0);
+  const [itemsToShow, setItemsToShow] = useState(12);
 
-  function getOptimizedImageUrl(url, width = 400, quality = 80) {
-    if (!url) return url;
-    const publicIndex = url.indexOf('/public/');
-    if (publicIndex === -1) return url;
-    const path = url.substring(publicIndex + 8);
-    const baseUrl = url.substring(0, publicIndex);
-    return `${baseUrl}/render/image/public/${path}?width=${width}&quality=${quality}`;
-  }
 
   useEffect(() => {
     fetchProducts();
@@ -39,7 +33,16 @@ export default function Creations({ setCurrentView }) {
       const dbCategory = categoryMap[activeFilter] || activeFilter;
       setFilteredProducts(products.filter(p => p.category === dbCategory));
     }
+    setItemsToShow(12);
   }, [activeFilter, products]);
+
+  useEffect(() => {
+    setDisplayedProducts(filteredProducts.slice(0, itemsToShow));
+  }, [filteredProducts, itemsToShow]);
+
+  function loadMore() {
+    setItemsToShow(prev => prev + 12);
+  }
 
   async function fetchProducts() {
     try {
@@ -130,34 +133,45 @@ export default function Creations({ setCurrentView }) {
         {filteredProducts.length === 0 ? (
           <p className="creations-empty">No hay productos disponibles en esta categoría aún.</p>
         ) : (
-          <div className="creations-grid">
-            {filteredProducts.map((product) => (
-              <div key={product.id} className="creation-card" onClick={() => openLightbox(product)}>
-                <div className="creation-image">
-                  <img
-                    src={getOptimizedImageUrl(product.image_url)}
-                    alt={product.name}
-                    className="creation-image-primary"
-                    loading="lazy"
-                  />
-                  {product.secondary_image_url && (
+          <>
+            <div className="creations-grid">
+              {displayedProducts.map((product) => (
+                <div key={product.id} className="creation-card" onClick={() => openLightbox(product)}>
+                  <div className="creation-image">
                     <img
-                      src={getOptimizedImageUrl(product.secondary_image_url)}
+                      src={product.image_url}
                       alt={product.name}
-                      className="creation-image-secondary"
+                      className="creation-image-primary"
                       loading="lazy"
+                      decoding="async"
                     />
-                  )}
+                    {product.secondary_image_url && (
+                      <img
+                        src={product.secondary_image_url}
+                        alt={product.name}
+                        className="creation-image-secondary"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
+                  </div>
+                  <div className="creation-info">
+                    <h3>{product.name}</h3>
+                    <p className="creation-category">{product.category}</p>
+                    <p className="creation-description">{product.description}</p>
+                    <p className="creation-price">{product.price}€</p>
+                  </div>
                 </div>
-                <div className="creation-info">
-                  <h3>{product.name}</h3>
-                  <p className="creation-category">{product.category}</p>
-                  <p className="creation-description">{product.description}</p>
-                  <p className="creation-price">{product.price}€</p>
-                </div>
+              ))}
+            </div>
+            {itemsToShow < filteredProducts.length && (
+              <div className="load-more-wrapper">
+                <button onClick={loadMore} className="load-more-btn">
+                  Cargar más
+                </button>
               </div>
-            ))}
-          </div>
+            )}
+          </>
         )}
 
         {lightboxOpen && lightboxProduct && (

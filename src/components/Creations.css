@@ -138,6 +138,27 @@
   color: var(--color-white);
 }
 
+.load-more-wrapper {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-lg) 0;
+}
+
+.load-more-btn {
+  padding: var(--spacing-md) var(--spacing-xl);
+  background: var(--color-blue);
+  color: var(--color-white);
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.load-more-btn:hover {
+  opacity: 0.8;
+}
+
 .lightbox {
   position: fixed;
   top: 0;
