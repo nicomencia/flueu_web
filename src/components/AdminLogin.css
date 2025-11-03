@@ -78,3 +78,29 @@
   background-color: #999;
   cursor: not-allowed;
 }
+
+.success-message {
+  background-color: #efe;
+  color: #3c3;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.toggle-mode {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: none;
+  color: #666;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.toggle-mode:hover {
+  color: #000;
+}
