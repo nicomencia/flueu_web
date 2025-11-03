@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import './Creations.css';
 
-const categories = ['Todas', 'Anillos', 'Pendientes', 'Collares', 'Pinzas'];
+const categories = ['Todas', 'Anillos', 'Pendientes', 'Colgantes', 'Pinzas'];
 
 export default function Creations({ setCurrentView }) {
   const [products, setProducts] = useState([]);
@@ -24,7 +24,7 @@ export default function Creations({ setCurrentView }) {
       const categoryMap = {
         'Anillos': 'Anillo',
         'Pendientes': 'Pendiente',
-        'Collares': 'Collar',
+        'Colgantes': 'Colgante',
         'Pinzas': 'Pinza'
       };
       const dbCategory = categoryMap[activeFilter] || activeFilter;
