@@ -17,7 +17,12 @@ export default function Collections({ setCurrentView, setSelectedCollection }) {
         .select('*')
         .order('created_at', { ascending: false });
 
-      if (collectionsError) throw collectionsError;
+      if (collectionsError) {
+        console.error('Supabase error:', collectionsError);
+        throw collectionsError;
+      }
+
+      console.log('Collections fetched:', collectionsData);
       setCollections(collectionsData || []);
     } catch (error) {
       console.error('Error fetching collections:', error);
