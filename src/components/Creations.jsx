@@ -13,6 +13,15 @@ export default function Creations({ setCurrentView }) {
   const [lightboxProduct, setLightboxProduct] = useState(null);
   const [lightboxImageIndex, setLightboxImageIndex] = useState(0);
 
+  function getOptimizedImageUrl(url, width = 400, quality = 80) {
+    if (!url) return url;
+    const publicIndex = url.indexOf('/public/');
+    if (publicIndex === -1) return url;
+    const path = url.substring(publicIndex + 8);
+    const baseUrl = url.substring(0, publicIndex);
+    return `${baseUrl}/render/image/public/${path}?width=${width}&quality=${quality}`;
+  }
+
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -126,14 +135,14 @@ export default function Creations({ setCurrentView }) {
               <div key={product.id} className="creation-card" onClick={() => openLightbox(product)}>
                 <div className="creation-image">
                   <img
-                    src={product.image_url}
+                    src={getOptimizedImageUrl(product.image_url)}
                     alt={product.name}
                     className="creation-image-primary"
                     loading="lazy"
                   />
                   {product.secondary_image_url && (
                     <img
-                      src={product.secondary_image_url}
+                      src={getOptimizedImageUrl(product.secondary_image_url)}
                       alt={product.name}
                       className="creation-image-secondary"
                       loading="lazy"
