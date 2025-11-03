@@ -273,11 +273,13 @@
     margin-top: 5rem;
   }
 
+  /*
   .creations-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-sm);
   }
-
+  */
+  
   .creation-image {
     aspect-ratio: 1 / 1;
   }
@@ -287,19 +289,19 @@
   }
 
   .creation-info h3 {
-    font-size: 0.7rem;
+    font-size: 1.125rem;
   }
 
   .creation-description {
-    font-size: 0.6rem;
+    font-size: 0.875rem;
   }
 
   .creation-category {
-    font-size: 0.5rem;
+    font-size: 0.875rem;
   } 
 
   .creation-price {
-    font-size: 0.5rem;
+    font-size: 1.125rem;
   }
 
   .lightbox-arrow {

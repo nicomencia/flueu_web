@@ -124,12 +124,12 @@ export default function Creations({ setCurrentView }) {
           ))}
         </div>
 
-        {activeFilter === 'Anillos' && (
-          <div className="tallas-link-wrapper">
-            <button onClick={() => setCurrentView('tallas')} className="tallas-link">Tallas</button>
-          </div>
-        )}
-
+        {/* {activeFilter === 'Anillos' && ( add below div inside )} */}
+        
+        <div className="tallas-link-wrapper">
+            <button onClick={() => setCurrentView('tallas')} className="tallas-link">GUíA DE TALLAS PARA ANILLOS</button>
+        </div>
+        
         {filteredProducts.length === 0 ? (
           <p className="creations-empty">No hay productos disponibles en esta categoría aún.</p>
         ) : (
