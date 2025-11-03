@@ -24,7 +24,7 @@ export default function Creations({ setCurrentView }) {
       const categoryMap = {
         'Anillos': 'Anillo',
         'Pendientes': 'Pendiente',
-        'Colgantes': 'Colgante',
+        'Collares': 'Collar',
         'Pinzas': 'Pinza'
       };
       const dbCategory = categoryMap[activeFilter] || activeFilter;
