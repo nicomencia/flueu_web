@@ -107,6 +107,7 @@
   gap: var(--spacing-md);
   max-width: 1200px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .custom-flower-item {
@@ -135,6 +136,7 @@
   gap: var(--spacing-lg);
   max-width: 1000px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .custom-accessory-item {
@@ -170,6 +172,7 @@
   gap: var(--spacing-lg);
   max-width: 900px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .custom-color-item {
