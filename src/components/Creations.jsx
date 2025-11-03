@@ -125,9 +125,19 @@ export default function Creations({ setCurrentView }) {
             {filteredProducts.map((product) => (
               <div key={product.id} className="creation-card" onClick={() => openLightbox(product)}>
                 <div className="creation-image">
-                  <img src={product.image_url} alt={product.name} className="creation-image-primary" />
+                  <img
+                    src={product.image_url}
+                    alt={product.name}
+                    className="creation-image-primary"
+                    loading="lazy"
+                  />
                   {product.secondary_image_url && (
-                    <img src={product.secondary_image_url} alt={product.name} className="creation-image-secondary" />
+                    <img
+                      src={product.secondary_image_url}
+                      alt={product.name}
+                      className="creation-image-secondary"
+                      loading="lazy"
+                    />
                   )}
                 </div>
                 <div className="creation-info">
