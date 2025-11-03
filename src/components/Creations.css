@@ -89,13 +89,13 @@
 }
 
 .creation-info h3 {
-  font-size: 0.5rem;
+  font-size: 1.125rem;
   margin-bottom: var(--spacing-xs);
 }
 
 .creation-category {
   color: var(--color-gray);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: var(--spacing-xs);
@@ -103,13 +103,13 @@
 
 .creation-description {
   color: var(--color-gray);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   margin-bottom: var(--spacing-xs);
   white-space: pre-line;
 }
 
 .creation-price {
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--color-blue);
 }
