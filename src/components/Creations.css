@@ -295,12 +295,12 @@
   }
 
   .creation-category {
-  font-size: 0.5rem;
-}
+    font-size: 0.5rem;
+  }
 
-.creation-price {
-  font-size: 0.5rem;
-}
+  .creation-price {
+    font-size: 0.5rem;
+  }
 
   .lightbox-arrow {
     width: 50px;
