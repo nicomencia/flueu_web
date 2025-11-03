@@ -103,8 +103,10 @@
 
 .custom-flowers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .custom-flower-item {
@@ -129,8 +131,10 @@
 
 .custom-accessory-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: var(--spacing-lg);
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .custom-accessory-item {
@@ -162,8 +166,10 @@
 
 .custom-color-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: var(--spacing-lg);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .custom-color-item {
