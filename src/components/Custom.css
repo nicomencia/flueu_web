@@ -103,7 +103,7 @@
 
 .custom-flowers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 220px));
   gap: var(--spacing-md);
   max-width: 1200px;
   margin: 0 auto;
@@ -117,8 +117,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease;
-  max-width: 400px;
-  justify-self: center;
+  width: 220px;
+  height: 220px;
 }
 
 .custom-flower-item:hover {
@@ -134,9 +134,9 @@
 
 .custom-accessory-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 220px));
   gap: var(--spacing-lg);
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   justify-content: center;
 }
@@ -145,8 +145,7 @@
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease;
-  max-width: 350px;
-  justify-self: center;
+  width: 220px;
 }
 
 .custom-accessory-item:hover {
@@ -154,8 +153,8 @@
 }
 
 .custom-accessory-item img {
-  width: 100%;
-  aspect-ratio: 1;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -172,9 +171,9 @@
 
 .custom-color-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 220px));
   gap: var(--spacing-lg);
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   justify-content: center;
 }
@@ -183,8 +182,7 @@
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease;
-  max-width: 300px;
-  justify-self: center;
+  width: 220px;
 }
 
 .custom-color-item:hover {
@@ -192,8 +190,8 @@
 }
 
 .custom-color-item img {
-  width: 100%;
-  aspect-ratio: 1;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
