@@ -103,7 +103,7 @@
 
 .creation-description {
   color: var(--color-gray);
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   margin-bottom: var(--spacing-xs);
   white-space: pre-line;
 }
