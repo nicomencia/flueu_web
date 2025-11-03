@@ -294,6 +294,14 @@
     font-size: 0.6rem;
   }
 
+  .creation-category {
+    font-size: 0.5rem;
+  } 
+
+  .creation-price {
+    font-size: 0.5rem;
+  }
+
   .lightbox-arrow {
     width: 50px;
     height: 50px;
