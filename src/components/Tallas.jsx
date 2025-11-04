@@ -14,7 +14,7 @@ export default function Tallas() {
           <div className="tallas-media">
             <div className="tallas-media-item">
               <video controls>
-                <source src="/talla.mp4" type="video/mp4" />
+                <source src="https://occvtyoxletwdhawqdmk.supabase.co/storage/v1/object/public/product-images/tallas.mp4" type="video/mp4" />
                 Tu navegador no soporta el elemento de video.
               </video>
             </div>
