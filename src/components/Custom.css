@@ -215,19 +215,25 @@
     font-size: 1.5rem;
   }
 
-  .custom-flowers-grid {
+  .custom-flowers-grid,
+  .custom-accessory-grid,
+  .custom-color-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-sm);
   }
 
-  .custom-accessory-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
+  .custom-flower-item,
+  .custom-accessory-item,
+  .custom-color-item {
+    width: 100%;
   }
 
-  .custom-color-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
+  .custom-accessory-item img,
+  .custom-color-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
   }
 }
 
