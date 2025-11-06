@@ -49,7 +49,7 @@ export default function Creations({ setCurrentView }) {
       const { data, error } = await supabase
         .from('products')
         .select('*')
-        .order('created_at', { ascending: false });
+        .order('display_order', { ascending: false });
 
       if (error) throw error;
       setProducts(data || []);
