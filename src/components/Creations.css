@@ -108,6 +108,13 @@
   white-space: pre-line;
 }
 
+.creation-size {
+  font-size: 0.875rem;
+  color: var(--color-gray);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+}
+
 .creation-price {
   font-size: 1.125rem;
   font-weight: 600;
