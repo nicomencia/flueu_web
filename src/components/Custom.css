@@ -185,10 +185,6 @@
   width: 220px;
 }
 
-.custom-color-item:hover {
-  transform: scale(1.05);
-}
-
 .custom-color-item img {
   width: 220px;
   height: 220px;
