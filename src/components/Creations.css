@@ -335,12 +335,16 @@
     aspect-ratio: 1 / 1;
   }
 
-  .creation-card:hover .creation-image-primary {
+  .creation-card:hover .creation-image-primary.loaded {
     opacity: 1;
   }
 
   .creation-card:hover .creation-image-secondary {
     opacity: 0;
+  }
+
+  .creation-card:active {
+    background: transparent;
   }
 
   .creation-info {
