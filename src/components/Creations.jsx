@@ -155,20 +155,20 @@ export default function Creations({ setCurrentView }) {
               {displayedProducts.map((product, index) => (
                 <div key={product.id} className="creation-card" onClick={() => openLightbox(product)}>
                   <div className="creation-image">
-                    {!loadedImages.has(product.image_url) && (
+                    {!loadedImages.has(product.thumbnail_url || product.image_url) && (
                       <div className="image-skeleton"></div>
                     )}
                     <img
-                      src={product.image_url}
+                      src={product.thumbnail_url || product.image_url}
                       alt={product.name}
-                      className={`creation-image-primary ${loadedImages.has(product.image_url) ? 'loaded' : ''}`}
+                      className={`creation-image-primary ${loadedImages.has(product.thumbnail_url || product.image_url) ? 'loaded' : ''}`}
                       loading={index < 6 ? "eager" : "lazy"}
                       decoding="async"
-                      onLoad={() => setLoadedImages(prev => new Set([...prev, product.image_url]))}
+                      onLoad={() => setLoadedImages(prev => new Set([...prev, product.thumbnail_url || product.image_url]))}
                     />
-                    {product.secondary_image_url && (
+                    {(product.secondary_thumbnail_url || product.secondary_image_url) && (
                       <img
-                        src={product.secondary_image_url}
+                        src={product.secondary_thumbnail_url || product.secondary_image_url}
                         alt={product.name}
                         className="creation-image-secondary"
                         loading={index < 6 ? "eager" : "lazy"}

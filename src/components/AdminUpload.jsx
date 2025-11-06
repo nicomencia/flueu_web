@@ -6,6 +6,45 @@ export default function AdminUpload() {
   const [uploading, setUploading] = useState(false);
   const [message, setMessage] = useState('');
 
+  const createThumbnail = (file, maxSize = 400) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          let width = img.width;
+          let height = img.height;
+
+          if (width > height) {
+            if (width > maxSize) {
+              height *= maxSize / width;
+              width = maxSize;
+            }
+          } else {
+            if (height > maxSize) {
+              width *= maxSize / height;
+              height = maxSize;
+            }
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+
+          canvas.toBlob((blob) => {
+            resolve(blob);
+          }, 'image/jpeg', 0.85);
+        };
+        img.onerror = reject;
+        img.src = e.target.result;
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  };
+
   const uploadImage = async (event) => {
     try {
       setUploading(true);
@@ -20,6 +59,7 @@ export default function AdminUpload() {
         const fileExt = file.name.split('.').pop();
         const fileName = file.name;
         const filePath = `${fileName}`;
+        const thumbnailPath = `thumbnails/${fileName}`;
 
         const { error: uploadError } = await supabase.storage
           .from('product-images')
@@ -32,12 +72,25 @@ export default function AdminUpload() {
           throw uploadError;
         }
 
+        const thumbnailBlob = await createThumbnail(file);
+        const { error: thumbnailError } = await supabase.storage
+          .from('product-images')
+          .upload(thumbnailPath, thumbnailBlob, {
+            cacheControl: '3600',
+            upsert: true,
+            contentType: 'image/jpeg'
+          });
+
+        if (thumbnailError) {
+          console.warn('Thumbnail upload failed:', thumbnailError);
+        }
+
         return filePath;
       });
 
       await Promise.all(uploadPromises);
 
-      setMessage(`Successfully uploaded ${files.length} image(s)!`);
+      setMessage(`Successfully uploaded ${files.length} image(s) with thumbnails!`);
       event.target.value = '';
     } catch (error) {
       setMessage(error.message);
@@ -54,7 +107,11 @@ export default function AdminUpload() {
       .from('product-images')
       .getPublicUrl(fileName);
 
-    setMessage(`Public URL: ${data.publicUrl}`);
+    const { data: thumbData } = supabase.storage
+      .from('product-images')
+      .getPublicUrl(`thumbnails/${fileName}`);
+
+    setMessage(`Full URL: ${data.publicUrl}\n\nThumbnail URL: ${thumbData.publicUrl}`);
   };
 
   return (
@@ -100,9 +157,9 @@ export default function AdminUpload() {
           <ol>
             <li>Click "Choose Images" and select one or multiple product photos</li>
             <li>Wait for the upload to complete</li>
-            <li>The images will be stored in Supabase Storage</li>
-            <li>Use "Get Image URL" to get the public URL for any uploaded image</li>
-            <li>Copy the URL and update your products in the database</li>
+            <li>Both full-size images and optimized thumbnails will be stored</li>
+            <li>Use "Get Image URL" to get both URLs for any uploaded image</li>
+            <li>Use the thumbnail URL for faster grid loading and full URL for lightbox</li>
           </ol>
         </div>
       </div>
