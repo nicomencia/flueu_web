@@ -6,7 +6,7 @@ export default function AdminUpload() {
   const [uploading, setUploading] = useState(false);
   const [message, setMessage] = useState('');
 
-  const createThumbnail = (file, maxSize = 400) => {
+  const createThumbnail = (file, maxSize = 800) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onload = (e) => {
