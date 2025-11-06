@@ -53,6 +53,8 @@ export default function AdminUpdateProducts() {
 
         if (product.image_url && !product.image_url.startsWith('http')) {
           updates.image_url = getStorageUrl(product.image_url);
+          const thumbnailFilename = product.image_url.replace(/(\.[^.]+)$/, '_thumbnail$1');
+          updates.thumbnail_url = getStorageUrl(thumbnailFilename);
         }
 
         if (product.secondary_image_url && !product.secondary_image_url.startsWith('http')) {
