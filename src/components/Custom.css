@@ -121,10 +121,6 @@
   height: 220px;
 }
 
-.custom-flower-item:hover {
-  transform: scale(1.05);
-}
-
 .custom-flower-item img {
   width: 100%;
   height: 100%;
@@ -146,10 +142,6 @@
   cursor: pointer;
   transition: transform 0.3s ease;
   width: 220px;
-}
-
-.custom-accessory-item:hover {
-  transform: scale(1.05);
 }
 
 .custom-accessory-item img {
