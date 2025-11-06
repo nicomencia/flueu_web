@@ -168,7 +168,7 @@ export default function Creations({ setCurrentView }) {
             {itemsToShow < filteredProducts.length && (
               <div className="load-more-wrapper">
                 <button onClick={loadMore} className="load-more-btn">
-                  Cargar más
+                  Más
                 </button>
               </div>
             )}
