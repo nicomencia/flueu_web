@@ -56,10 +56,9 @@ export default function AdminUpload() {
       }
 
       const uploadPromises = Array.from(files).map(async (file) => {
-        const fileExt = file.name.split('.').pop();
         const fileName = file.name;
         const filePath = `${fileName}`;
-        const thumbnailPath = `thumbnails/${fileName}`;
+        const thumbnailPath = fileName.replace(/(\.[^.]+)$/, '_thumbnail$1');
 
         const { error: uploadError } = await supabase.storage
           .from('product-images')
@@ -107,9 +106,10 @@ export default function AdminUpload() {
       .from('product-images')
       .getPublicUrl(fileName);
 
+    const thumbnailFileName = fileName.replace(/(\.[^.]+)$/, '_thumbnail$1');
     const { data: thumbData } = supabase.storage
       .from('product-images')
-      .getPublicUrl(`thumbnails/${fileName}`);
+      .getPublicUrl(thumbnailFileName);
 
     setMessage(`Full URL: ${data.publicUrl}\n\nThumbnail URL: ${thumbData.publicUrl}`);
   };
