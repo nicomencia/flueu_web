@@ -14,6 +14,7 @@ export default function Creations({ setCurrentView }) {
   const [lightboxProduct, setLightboxProduct] = useState(null);
   const [lightboxImageIndex, setLightboxImageIndex] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(12);
+  const [preloadedImages, setPreloadedImages] = useState(new Set());
 
 
   useEffect(() => {
@@ -37,7 +38,22 @@ export default function Creations({ setCurrentView }) {
   }, [activeFilter, products]);
 
   useEffect(() => {
-    setDisplayedProducts(filteredProducts.slice(0, itemsToShow));
+    const products = filteredProducts.slice(0, itemsToShow);
+    setDisplayedProducts(products);
+
+    // Preload images for better perceived performance
+    products.forEach(product => {
+      if (!preloadedImages.has(product.image_url)) {
+        const img = new Image();
+        img.src = product.image_url;
+        setPreloadedImages(prev => new Set([...prev, product.image_url]));
+      }
+      if (product.secondary_image_url && !preloadedImages.has(product.secondary_image_url)) {
+        const img = new Image();
+        img.src = product.secondary_image_url;
+        setPreloadedImages(prev => new Set([...prev, product.secondary_image_url]));
+      }
+    });
   }, [filteredProducts, itemsToShow]);
 
   function loadMore() {
@@ -135,14 +151,14 @@ export default function Creations({ setCurrentView }) {
         ) : (
           <>
             <div className="creations-grid">
-              {displayedProducts.map((product) => (
+              {displayedProducts.map((product, index) => (
                 <div key={product.id} className="creation-card" onClick={() => openLightbox(product)}>
                   <div className="creation-image">
                     <img
                       src={product.image_url}
                       alt={product.name}
                       className="creation-image-primary"
-                      loading="lazy"
+                      loading={index < 6 ? "eager" : "lazy"}
                       decoding="async"
                     />
                     {product.secondary_image_url && (
@@ -150,7 +166,7 @@ export default function Creations({ setCurrentView }) {
                         src={product.secondary_image_url}
                         alt={product.name}
                         className="creation-image-secondary"
-                        loading="lazy"
+                        loading={index < 6 ? "eager" : "lazy"}
                         decoding="async"
                       />
                     )}
