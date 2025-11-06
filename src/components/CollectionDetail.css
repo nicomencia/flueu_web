@@ -135,6 +135,10 @@
 }
 
 @media (max-width: 768px) {
+  .back-button {
+    margin-top: 3rem;
+  }
+
   .collection-detail-title {
     margin-top: 3rem;
   }
