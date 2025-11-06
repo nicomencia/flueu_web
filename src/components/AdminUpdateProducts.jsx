@@ -51,10 +51,19 @@ export default function AdminUpdateProducts() {
       const updatePromises = products.map(async (product) => {
         const updates = {};
 
-        if (product.image_url && !product.image_url.startsWith('http')) {
-          updates.image_url = getStorageUrl(product.image_url);
-          const thumbnailFilename = product.image_url.replace(/(\.[^.]+)$/, '_thumbnail$1');
-          updates.thumbnail_url = getStorageUrl(thumbnailFilename);
+        if (product.image_url) {
+          if (!product.image_url.startsWith('http')) {
+            updates.image_url = getStorageUrl(product.image_url);
+          }
+
+          if (!product.thumbnail_url) {
+            let filename = product.image_url;
+            if (filename.startsWith('http')) {
+              filename = filename.split('/').pop();
+            }
+            const thumbnailFilename = filename.replace(/(\.[^.]+)$/, '_thumbnail$1');
+            updates.thumbnail_url = getStorageUrl(thumbnailFilename);
+          }
         }
 
         if (product.secondary_image_url && !product.secondary_image_url.startsWith('http')) {
