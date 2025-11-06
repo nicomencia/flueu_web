@@ -142,6 +142,12 @@ export default function AdminUpdateProducts() {
                     <span className="label">Image:</span>
                     <span className="url">{product.image_url}</span>
                   </div>
+                  {product.thumbnail_url && (
+                    <div>
+                      <span className="label">Thumbnail:</span>
+                      <span className="url">{product.thumbnail_url}</span>
+                    </div>
+                  )}
                   {product.secondary_image_url && (
                     <div>
                       <span className="label">Secondary:</span>
