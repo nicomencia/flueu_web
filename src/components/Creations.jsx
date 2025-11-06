@@ -159,7 +159,7 @@ export default function Creations({ setCurrentView }) {
                     <h3>{product.name}</h3>
                     <p className="creation-category">{product.category}</p>
                     <p className="creation-description">{product.description}</p>
-                    {product.size && product.size !== 0 && product.size !== "0" && <p className="creation-size">Talla {product.size}</p>}
+                    {product.category === 'ANILLO' && product.size && <p className="creation-size">Talla {product.size}</p>}
                     <p className="creation-price">{product.price}€</p>
                   </div>
                 </div>
