@@ -298,9 +298,17 @@
     gap: var(--spacing-sm);
   }
   */
-  
+
   .creation-image {
     aspect-ratio: 1 / 1;
+  }
+
+  .creation-card:hover .creation-image-primary {
+    opacity: 1;
+  }
+
+  .creation-card:hover .creation-image-secondary {
+    opacity: 0;
   }
 
   .creation-info {
@@ -317,7 +325,7 @@
 
   .creation-category {
     font-size: 0.875rem;
-  } 
+  }
 
   .creation-price {
     font-size: 1.125rem;
