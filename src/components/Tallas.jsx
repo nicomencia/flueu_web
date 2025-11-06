@@ -18,11 +18,13 @@ export default function Tallas() {
                 Tu navegador no soporta el elemento de video.
               </video>
             </div>
-            <div className="tallas-media-item">
-              <img src="/tallas.png" alt="Guía de tallas" />
-            </div>
-            <div className="tallas-media-item">
-              <img src="/tallas_tabla.png" alt="Tabla de tallas" />
+            <div className="tallas-images-row">
+              <div className="tallas-media-item">
+                <img src="/tallas.png" alt="Guía de tallas" />
+              </div>
+              <div className="tallas-media-item">
+                <img src="/tallas_tabla.png" alt="Tabla de tallas" />
+              </div>
             </div>
           </div>
         </div>
