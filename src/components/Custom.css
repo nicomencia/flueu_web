@@ -111,7 +111,6 @@
 }
 
 .custom-flower-item {
-  aspect-ratio: 1;
   overflow: hidden;
   border-radius: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -215,6 +214,11 @@
   .custom-accessory-item,
   .custom-color-item {
     width: 100%;
+  }
+
+  .custom-flower-item {
+    height: auto;
+    aspect-ratio: 1;
   }
 
   .custom-accessory-item img,
