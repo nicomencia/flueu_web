@@ -18,7 +18,7 @@ export default function AdminManageSold() {
       const { data, error } = await supabase
         .from('products')
         .select('*')
-        .order('name');
+        .order('display_order', { ascending: true });
 
       if (error) throw error;
       setProducts(data || []);
