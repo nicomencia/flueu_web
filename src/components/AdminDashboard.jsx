@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { supabase } from '../lib/supabase';
 import AdminUpload from './AdminUpload';
 import AdminUpdateProducts from './AdminUpdateProducts';
+import AdminManageSold from './AdminManageSold';
 import './AdminDashboard.css';
 
 export default function AdminDashboard() {
@@ -34,11 +35,18 @@ export default function AdminDashboard() {
         >
           Update Products
         </button>
+        <button
+          className={`tab-button ${activeTab === 'sold' ? 'active' : ''}`}
+          onClick={() => setActiveTab('sold')}
+        >
+          Manage Sold
+        </button>
       </div>
 
       <div className="admin-dashboard-content">
         {activeTab === 'upload' && <AdminUpload />}
         {activeTab === 'update' && <AdminUpdateProducts />}
+        {activeTab === 'sold' && <AdminManageSold />}
       </div>
     </div>
   );
