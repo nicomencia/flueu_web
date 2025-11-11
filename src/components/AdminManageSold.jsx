@@ -7,6 +7,7 @@ export default function AdminManageSold() {
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState('');
   const [filter, setFilter] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     loadProducts();
@@ -57,9 +58,13 @@ export default function AdminManageSold() {
   };
 
   const filteredProducts = products.filter(product => {
-    if (filter === 'sold') return product.sold;
-    if (filter === 'available') return !product.sold;
-    return true;
+    const matchesFilter = filter === 'all' ||
+                         (filter === 'sold' && product.sold) ||
+                         (filter === 'available' && !product.sold);
+
+    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+
+    return matchesFilter && matchesSearch;
   });
 
   if (loading) {
@@ -70,6 +75,17 @@ export default function AdminManageSold() {
     <div className="admin-sold">
       <div className="admin-sold-header">
         <h2>Manage Sold Products</h2>
+
+        <div className="admin-sold-search">
+          <input
+            type="text"
+            placeholder="Search by product name..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="search-input"
+          />
+        </div>
+
         <div className="admin-sold-filters">
           <button
             className={`filter-button ${filter === 'all' ? 'active' : ''}`}
