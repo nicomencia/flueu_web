@@ -123,9 +123,6 @@ export default function AdminManageSold() {
                 alt={product.name}
                 loading="lazy"
               />
-              {product.sold && (
-                <div className="sold-overlay">SOLD</div>
-              )}
             </div>
             <div className="admin-sold-info">
               <h3>{product.name}</h3>
