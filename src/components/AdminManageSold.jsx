@@ -113,7 +113,6 @@ export default function AdminManageSold() {
             </div>
             <div className="admin-sold-info">
               <h3>{product.name}</h3>
-              <p className="product-price">${product.price}</p>
               <button
                 className={`toggle-sold-button ${product.sold ? 'mark-available' : 'mark-sold'}`}
                 onClick={() => toggleSoldStatus(product.id, product.sold)}
