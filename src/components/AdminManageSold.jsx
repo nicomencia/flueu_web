@@ -40,7 +40,14 @@ export default function AdminManageSold() {
       if (error) throw error;
 
       setMessage('Product status updated successfully!');
-      loadProducts();
+
+      setProducts(prevProducts =>
+        prevProducts.map(product =>
+          product.id === productId
+            ? { ...product, sold: !currentStatus }
+            : product
+        )
+      );
     } catch (error) {
       setMessage(`Error: ${error.message}`);
     }
