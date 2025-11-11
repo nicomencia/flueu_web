@@ -99,10 +99,6 @@
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.admin-sold-card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-
 .admin-sold-card.sold {
   opacity: 0.85;
 }
