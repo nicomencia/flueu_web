@@ -49,10 +49,11 @@ export default function Creations({ setCurrentView }) {
         img.src = product.image_url;
         setPreloadedImages(prev => new Set([...prev, product.image_url]));
       }
-      if (product.secondary_image_url && !preloadedImages.has(product.secondary_image_url)) {
+      const secondaryImgUrl = product.secondary_thumbnail_url || product.secondary_image_url;
+      if (secondaryImgUrl && !preloadedImages.has(secondaryImgUrl)) {
         const img = new Image();
-        img.src = product.secondary_image_url;
-        setPreloadedImages(prev => new Set([...prev, product.secondary_image_url]));
+        img.src = secondaryImgUrl;
+        setPreloadedImages(prev => new Set([...prev, secondaryImgUrl]));
       }
     });
   }, [filteredProducts, itemsToShow]);
@@ -167,9 +168,9 @@ export default function Creations({ setCurrentView }) {
                       decoding="async"
                       onLoad={() => setLoadedImages(prev => new Set([...prev, product.thumbnail_url || product.image_url]))}
                     />
-                    {product.secondary_image_url && (
+                    {(product.secondary_thumbnail_url || product.secondary_image_url) && (
                       <img
-                        src={product.secondary_image_url}
+                        src={product.secondary_thumbnail_url || product.secondary_image_url}
                         alt={product.name}
                         className="creation-image-secondary"
                         loading={index < 6 ? "eager" : "lazy"}

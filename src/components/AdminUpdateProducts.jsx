@@ -56,11 +56,13 @@ export default function AdminUpdateProducts() {
         const mainImageFilename = `${product.name}.jpg`;
         const secondaryImageFilename = `${product.name}b.jpg`;
         const thumbnailFilename = `${product.name}_thumbnail.jpg`;
+        const secondaryThumbnailFilename = `${product.name}b_thumbnail.jpg`;
 
         const updates = {
           image_url: getStorageUrl(mainImageFilename),
           secondary_image_url: getStorageUrl(secondaryImageFilename),
-          thumbnail_url: getStorageUrl(thumbnailFilename)
+          thumbnail_url: getStorageUrl(thumbnailFilename),
+          secondary_thumbnail_url: getStorageUrl(secondaryThumbnailFilename)
         };
 
         const { error } = await supabase
@@ -179,7 +181,7 @@ export default function AdminUpdateProducts() {
             {updatingUrls ? 'Updating URLs...' : 'Update All URLs'}
           </button>
           <p className="bulk-info">
-            Automatically populate all image URLs based on product names (e.g., ELJARDIN0F34.jpg, ELJARDIN0F34b.jpg, ELJARDIN0F34_thumbnail.jpg)
+            Automatically populate all image URLs based on product names (e.g., ELJARDIN0F34.jpg, ELJARDIN0F34b.jpg, ELJARDIN0F34_thumbnail.jpg, ELJARDIN0F34b_thumbnail.jpg)
           </p>
         </div>
 
