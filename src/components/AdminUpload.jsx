@@ -58,10 +58,6 @@ export default function AdminUpload() {
       const uploadPromises = Array.from(files).map(async (file) => {
         const fileName = file.name;
         const filePath = `${fileName}`;
-
-        // Generate thumbnail path (handles both main and secondary images)
-        // ELJARDIN0F34.jpg -> ELJARDIN0F34_thumbnail.jpg
-        // ELJARDIN0F34b.jpg -> ELJARDIN0F34b_thumbnail.jpg
         const thumbnailPath = fileName.replace(/(\.[^.]+)$/, '_thumbnail$1');
 
         const { error: uploadError } = await supabase.storage
